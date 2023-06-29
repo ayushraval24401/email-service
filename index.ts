@@ -23,6 +23,8 @@ connect().then(async () => {
     try {
       const { data, to, subject } = JSON.parse(bodyData?.content);
 
+      console.log("My data: ", data);
+
       if (data && to && subject) {
         const html = `<!DOCTYPE html>
       <html lang="en" style="height:100vh">
@@ -206,7 +208,7 @@ connect().then(async () => {
   
                ${data?.products?.map((product: any) => {
                  return `<tr>
-                          <td colspan="4" class="service">${product?._id}</td>
+                          <td colspan="4" class="service">${product}</td>
                         </tr>`;
                })}
   
